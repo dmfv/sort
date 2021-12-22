@@ -33,13 +33,17 @@ def stupidSort(unsortedList):
     return unsortedList
 
 def shakerSort(unsortedList):
-    for i in range(int(len(unsortedList)/2)-1):
+    noSwap = False
+    while not noSwap:
+        noSwap = True
         for j in range(len(unsortedList)-1):
             if unsortedList[j] > unsortedList[j+1]:
                 unsortedList[j], unsortedList[j+1] = unsortedList[j+1], unsortedList[j]
+                noSwap = False
         for j in range(len(unsortedList)-1, 1, -1):
             if unsortedList[j-1] > unsortedList[j]:
                 unsortedList[j], unsortedList[j-1] = unsortedList[j-1], unsortedList[j]
+                noSwap = False
     return unsortedList
 
 if __name__ == "__main__":
