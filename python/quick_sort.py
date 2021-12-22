@@ -1,7 +1,5 @@
 import random
 
-import random
-
 def qSort (unsortedList):
     if len(unsortedList) < 2:
         return unsortedList
